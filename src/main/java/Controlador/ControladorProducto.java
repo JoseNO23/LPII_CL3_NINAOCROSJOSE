@@ -58,16 +58,13 @@ public class ControladorProducto extends HttpServlet {
 				crud.EliminarProducto(prodcuto);
 				List<TblProductocl3> lista = crud.ListarProducto();
 				request.setAttribute("listaproductos", lista);
-				
 				request.getRequestDispatcher("/ListadoProductos.jsp");
 				break;
 			}
 		}
 		
 		List<TblProductocl3> listadoproducto =crud.ListarProducto();
-		//ASIGNAMOS EL LISTADO DE CLIENTES RECUPERADOS DE LA BD
 		request.setAttribute("ListadoProductos", listadoproducto);
-		
 		request.getRequestDispatcher("/ListadoProductos.jsp").forward(request, response);	
 	}
 
@@ -101,10 +98,9 @@ public class ControladorProducto extends HttpServlet {
         }
 
         List<TblProductocl3> listadoproducto = crud.ListarProducto();
-	
-		//ASIGNAMOS EL LISTADO DE CLIENTES RECUPERADOS DE LA BD
+
+       
 		request.setAttribute("ListadoProductos", listadoproducto);
-		//REDIRECCIONAMOS A LISTADO
 		request.getRequestDispatcher("/ListadoProductos.jsp").forward(request, response);
 		
 	}
